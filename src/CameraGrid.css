@@ -1,0 +1,172 @@
+/* ============================
+   🎨 GLOBAL
+============================ */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0A0E27, #14193D);
+  background-attachment: fixed;
+  font-family: "Inter", Arial, sans-serif;
+  color: white;
+}
+
+/* ============================
+   📝 TITULOS
+============================ */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 34px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+h1 + p {
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.85;
+  margin-top: 0px;
+}
+
+/* ============================
+   🔳 GRID
+============================ */
+.camera-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 20px;
+}
+
+/* ============================
+   🪪 TARJETA DE CÁMARA
+============================ */
+.camera-card {
+  background: rgba(28, 31, 59, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 18px 20px;
+  border-radius: 18px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.32);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.camera-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================
+   🏷️ TITULO DE LA TARJETA
+============================ */
+.camera-title {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+/* ============================
+   📄 DESCRIPCIÓN
+============================ */
+.camera-card p {
+  font-size: 13px;
+  opacity: 0.88;
+  margin: 4px 0;
+}
+
+/* Serial */
+.camera-serial {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Estado */
+.status-online {
+  color: #4ade80; /* verde suave */
+  font-weight: 600;
+}
+
+.status-offline {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* ============================
+   🔘 BOTONES
+============================ */
+.camera-button,
+.camera-edit {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+/* Ver cámara */
+.camera-button {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: white;
+}
+.camera-button:hover {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  transform: scale(1.02);
+}
+
+/* Botón editar */
+.camera-edit {
+  background: #334155;
+  color: white;
+}
+.camera-edit:hover {
+  background: #475569;
+  transform: scale(1.02);
+}
+
+/* =======================================
+   📱 RESPONSIVE MOVIL
+======================================= */
+@media (max-width: 640px) {
+  .camera-grid {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 18px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .camera-card {
+    padding: 18px;
+  }
+}
+
+/* =======================================
+   📱 TABLET
+======================================= */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .camera-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}

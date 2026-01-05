@@ -1,0 +1,104 @@
+/* Header */
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: row; /* desktop y tablet por defecto */
+  margin-bottom: 20px;
+  padding: 10px;
+  color: white;
+}
+
+/* Botón "Regresar" */
+.player-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+
+  background: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  border-radius: 12px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 14px;
+
+  position: absolute;
+  left: 10px; /* desktop y tablet */
+}
+
+.player-back-btn:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateX(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Título */
+.player-title {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* ─────────────────────────────── */
+/* 📱 MÓVIL — botón debajo */
+/* ─────────────────────────────── */
+@media (max-width: 480px) {
+  .player-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .player-back-btn {
+    position: static;
+    order: 2;
+    width: fit-content;
+    font-size: 13px;
+  }
+
+  .player-title {
+    order: 1;
+    font-size: 20px;
+  }
+}
+
+
+/* ─────────────────────────────── */
+/* 📲 TABLET — alineación bonita */
+/* ─────────────────────────────── */
+@media (min-width: 481px) and (max-width: 900px) {
+
+  .player-header {
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .player-back-btn {
+    position: relative; /* 👍 se deja de mover */
+    left: 0;
+    margin-right: 15px; /* separa del título */
+    font-size: 14px;
+    padding: 9px 16px;
+  }
+
+  .player-title {
+    font-size: 22px;
+  }
+}
+
+
+/* Desktop */
+@media (min-width: 901px) {
+  .player-title {
+    font-size: 24px;
+  }
+}
+
